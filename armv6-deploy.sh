@@ -29,8 +29,8 @@ done
 
 if [ -z ${PI_HOST} ] && [ -z ${PI_USER} ]; then echo "neither host nor username is set" && exit 1; fi
 if [ -z ${PI_HOST} ] || [ -z ${PI_USER} ]; then echo "both host and username need to be set" && exit 1; fi
-if [ -z ${HUB_IP_OR_HOST} ]; then echo "you need to use the -r flag, see -h for more info" && exit 1; fi
-if [ -n "$INSTALL" ]; then echo "going to install telelgraf"; fi
+[ -z ${HUB_IP_OR_HOST} ] && echo "you need to use the -r flag, see -h for more info" && exit 1;
+[ -n "$INSTALL" ] && echo "going to install telelgraf";
 
 PI_USER_AT_HOST="${PI_USER}@${PI_HOST}"
 
